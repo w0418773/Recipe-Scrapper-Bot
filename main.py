@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk, Tk
+from PIL import Image, ImageTk
 import scrapper
 
 # Call when using input to remore placeholder
@@ -61,9 +62,11 @@ textBackground = "#D1D5DE"
 inactiveBtn = "#B7B6C2"
 
 root = Tk()
-# root.geometry("504x537")
 root.configure(bg=frameColor)
 root.title("Recipe Generator")
+icon_image = Image.open("res/recipe.ico")
+photo_image = ImageTk.PhotoImage(icon_image)
+root.iconphoto(False, photo_image)
 s = ttk.Style()
 s.configure('custom.TFrame', background=frameColor)
 frame = ttk.Frame(root, style='custom.TFrame')
